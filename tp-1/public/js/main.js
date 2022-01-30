@@ -1,36 +1,27 @@
 logIndex0to5();
 
-const h1 = document.querySelector('h1').innerText; // Or innerHtml to get html instead of text
-const h2 = document.querySelector('h2#titleNews').innerText; // Or innerHtml to get html instead of text
-const h3s = document.querySelectorAll('h3.title');
+logMessage(H1);
+logMessage(H2);
+H3S.forEach(h3 => logMessage(h3.innerText));
 
-logMessage(h1);
-logMessage(h2);
-h3s.forEach(h3 => logMessage(h3.innerText));
+// From stuff
+FORM.addEventListener('submit', e => e.preventDefault()); // Disable refresh on submit
 
-/* From stuff */
-const form = document.querySelector('form#addNewsForm');
-const btn = document.querySelector('input[name="addNewsBtn"]');
-const news = document.querySelector('input[name="titleToAdd"]');
-const newsSection = document.querySelector('section#news');
+BTN.addEventListener("click", () => {
 
-form.addEventListener('submit', e => e.preventDefault()); // Disable refresh on submit
-
-btn.addEventListener("click", () => {
-
-    let title = news.value;
+    let title = NEWS.value;
 
     //Reset section
-    news.value = '';
+    NEWS.value = '';
     let err = document.querySelector('#err');
     if(document.contains(err)) err.remove();
 
     //Input validation section
     if(/^\s*$/.test(title)) throwErr('Empty input !'); // Whitespace regex
-    if(newsSection.innerText.indexOf(title) !== -1) throwErr('News already exists !');
+    if(NEWSSELECTION.innerText.indexOf(title) !== -1) throwErr('News already exists !');
 
     //Insert section
-    newsSection.insertAdjacentHTML('beforeend',`
+    NEWSSELECTION.insertAdjacentHTML('beforeend',`
         <article>
             <h3 class="title">${title}</h3>
         </article>

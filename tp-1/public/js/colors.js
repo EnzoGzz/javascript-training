@@ -1,3 +1,3 @@
-const green = '#00FF00';
-const red = '#FF0000';
-const blue = '#0000FF';
+const GREEN = '#00FF00';
+const RED = '#FF0000';
+const BLUE = '#0000FF';

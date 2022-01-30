@@ -9,19 +9,8 @@ function logMessageWithTime(msg){
 
 function logIndex0to5(){
     for (let i =0;i<5;i++){
-        if(i === 0) logMessage(green);
-        else if((i%2) === 0) logMessage(red);
-        else logMessage(blue);
+        if(i === 0) logMessage(GREEN);
+        else if((i%2) === 0) logMessage(RED);
+        else logMessage(BLUE);
     }
-}
-
-function throwErr(msg){
-
-    form.insertAdjacentHTML('afterbegin', `
-            <p id="err" style="color: ${red}">
-                ${msg}
-            </p>
-    `)
-
-    throw msg;
 }

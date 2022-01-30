@@ -15,3 +15,5 @@ Code in this repository is only for school works.
 Each directory represent an answer to a subject.
 
 Individual readme are in 🇫🇷 French.
+
+
