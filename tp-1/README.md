@@ -12,8 +12,8 @@
   - si l’index courant est égal à 0 alors on log le code couleur vert
   - si l’index courant est un nombre paire alors on log le code couleur rouge
   - si l’index courant est un nombre impaire alors on log le code couleur bleu
-- Récupérer le contenu de la balise H1 et le log
-- Récupérer le contenu de la balise H2 ayant pour ID titleNews et on le log
+- Récupérer le contenu de la balise H1 et le log (html)
+- Récupérer le contenu de la balise H2 ayant pour ID titleNews et on le log (text)
 - Récupérer le contenu de toutes les balises H3 ayant pour classe title et on le log
 - Au clic sur le bouton du formulaire, il faut récupérer le contenu du champ (vous pouvez rajouter un attribut ID ou utiliser un sélecteur prenant en compte le name) et ajouter un article dans la section ayant pour ID news (le contenu HTML de l’article provient du champ input)
 - Lever une Exception si le champ est vide et afficher un message d’erreur
