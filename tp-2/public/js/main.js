@@ -9,5 +9,8 @@ logMessageWithDate(titleNews.innerText);
 let titles = document.querySelectorAll('h3.title');
 titles.forEach(element => logMessageWithDate(element.innerHTML));
 
-let button = document.querySelector('input[name="addNewsBtn"]');
-bindButton(button);
+let addButton = document.querySelector('input[name="addNewsBtn"]');
+bindAddButton(addButton);
+
+let detailButtons = document.querySelectorAll('article button');
+bindDetailsButton(detailButtons);

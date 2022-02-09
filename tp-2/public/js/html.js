@@ -1,4 +1,4 @@
-function bindButton(button){
+function bindAddButton(button){
 	button.onclick = function(event){
 		event.preventDefault();
     	let champ = document.querySelector('input[name="titleToAdd"]');
@@ -8,6 +8,17 @@ function bindButton(button){
 
 		return false;
 	}
+}
+
+function bindDetailsButton(buttons){
+    buttons.forEach( (button) => {
+            button.onclick = function (event) {
+                event.preventDefault();
+                logMessageWithDate(button.parentNode.querySelector('p').innerText)
+                return false;
+            }
+        }
+    )
 }
 
 function clearErrors(){

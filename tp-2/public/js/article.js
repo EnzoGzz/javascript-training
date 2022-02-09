@@ -2,10 +2,15 @@ function createArticleHtml(title) {
     let newArticle = document.createElement('article');
     let h3 = document.createElement('h3');
     let news = document.querySelector('#news');
+    newArticle.id = `article-${countArticles()+1}`
     h3.innerHTML = title;
     h3.classList.add('title');
     newArticle.append(h3);
     news.append(newArticle);
+}
+
+function countArticles(){
+    return document.querySelectorAll('article').length
 }
 
 function assertRequiredField(title) {
