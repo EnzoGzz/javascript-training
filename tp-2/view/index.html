@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8" />
@@ -8,42 +8,54 @@
 </head>
 
 <body>
-
     <h1> TP2 JS </h1>
+    <div id="main">
+        <div id="articles">
 
-    <section id="news">
-        <h2 id="titleNews"></h2>
-        <article id="article-1">
-            <h3 class="title">News 1</h3>
-            <p>Une super news un.</p>
-            <button>View detail</button>
-        </article>
+            <section id="news">
+                <h2 id="titleNews"></h2>
+                <article id="article-1">
+                    <h3 class="title">News 1</h3>
+                    <p>Une super news un.</p>
+                    <button>View detail</button>
+                </article>
 
-        <article id="article-2">
-            <h3 class="title">News 2</h3>
-            <p>Une super news deux.</p>
-            <button>View detail</button>
-        </article>
+                <article id="article-2">
+                    <h3 class="title">News 2</h3>
+                    <p>Une super news deux.</p>
+                    <button>View detail</button>
+                </article>
 
-        <article id="article-3">
-            <h3 class="title">News 3</h3>
-            <p>Une super news trois.</p>
-            <button>View detail</button>
-        </article>
-    </section>
+                <article id="article-3">
+                    <h3 class="title">News 3</h3>
+                    <p>Une super news trois.</p>
+                    <button>View detail</button>
+                </article>
+            </section>
+        </div>
 
-    <form id="addNewsForm">
-        Nom de la news : <input name="titleToAdd" type="text" />
 
-        <input type="submit" name="addNewsBtn" />
-    </form>
+        <form id="addNewsForm">
+            <label for="titleToAdd">Nom de la news</label>
+            <input id="titleToAdd" name="titleToAdd" type="text"/>
+            <br>
+            <label for="descToAdd">Description de la news</label>
+            <textarea id="descToAdd" name="descToAdd" cols="30" rows="5"></textarea>
+
+            <input type="submit" name="addNewsBtn" />
+        </form>
+    </div>
+
 </body>
 
 <script src="../public/js/const.js"></script>
 <script src="../public/js/log.js"></script>
-<script src="../public/js/math.js"></script>
 <script src="../public/js/html.js"></script>
-<script src="../public/js/article.js"></script>
+<script src="../public/js/Article.js"></script>
 <script src="../public/js/main.js"></script>
+<script src="../public/js/errors/ArticleExistsError.js"></script>
+<script src="../public/js/errors/TitleEmptyError.js"></script>
+<script src="../public/js/errors/TitleTooShortError.js"></script>
+<script src="../public/js/errors/DescEmptyError.js"></script>
 
 </html>

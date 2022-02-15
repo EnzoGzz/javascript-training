@@ -1,11 +1,29 @@
 function bindAddButton(button){
 	button.onclick = function(event){
 		event.preventDefault();
-    	let champ = document.querySelector('input[name="titleToAdd"]');
-		
-		if(addArticle(champ.value))
-			champ.value = '';
+    	let title = document.querySelector('input[name="titleToAdd"]');
+    	let desc = document.querySelector('textarea[name="descToAdd"]');
 
+        try{
+            new Article(Article.count()+1,title.value, desc.value).show();
+            title.value = '';
+            desc.value = '';
+        }catch (e){
+            let form = document.querySelector('#addNewsForm');
+
+            // Faire un type 'ArticleError' et 'TitleError' puis préciser le pb dans le message aurait été plus propre, mais pas sujet du tp.
+            if(e instanceof TitleEmptyError){
+                addError("Titre vide", form);
+            }else if(e instanceof TitleTooShortError){
+                addError("Titre trop court", form);
+            }else if(e instanceof ArticleExistsError){
+                addError("Article déja existant", form);
+            }else if(e instanceof DescEmptyError){
+                addError("Description vide", form);
+            }else{
+                addError("Erreur inconnue", form);
+            }
+        }
 		return false;
 	}
 }

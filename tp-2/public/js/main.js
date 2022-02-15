@@ -1,16 +1,14 @@
-iterate();
-
-let h1 = document.querySelector('h1');
-logMessageWithDate(h1.innerHTML);
-
-let titleNews = document.querySelector('#titleNews');
-logMessageWithDate(titleNews.innerText);
-
-let titles = document.querySelectorAll('h3.title');
-titles.forEach(element => logMessageWithDate(element.innerHTML));
-
 let addButton = document.querySelector('input[name="addNewsBtn"]');
 bindAddButton(addButton);
 
 let detailButtons = document.querySelectorAll('article button');
 bindDetailsButton(detailButtons);
+
+json = JSON.parse(ALLNEWSJSON);
+
+json.forEach((row) => {
+    let article = new Article(row.id,row.title,row.desc);
+    article.show();
+
+    console.log(article);
+});
