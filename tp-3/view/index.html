@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>News</title>
+    <link rel="stylesheet" href="../dist/css/main.css">
+</head>
+
+<body>
+<h1> TP3 JS </h1>
+<div id="main">
+    <div id="ongletsLabels">
+        <button>Articles & recherche</button>
+        <button>Créer un article</button>
+    </div>
+    <div id="articles">
+            <section id="news">
+                <h2 id="titleNews"></h2>
+                <article id="article-1">
+                    <h3 class="title">News 1</h3>
+                    <p>Une super news un.</p>
+                    <button>View detail</button>
+                </article>
+
+                <article id="article-2">
+                    <h3 class="title">News 2</h3>
+                    <p>Une super news deux.</p>
+                    <button>View detail</button>
+                </article>
+
+                <article id="article-3">
+                    <h3 class="title">News 3</h3>
+                    <p>Une super news trois.</p>
+                    <button>View detail</button>
+                </article>
+            </section>
+    </div>
+    <form id="addNewsForm">
+        <label for="titleToAdd">Nom de la news</label>
+        <input id="titleToAdd" name="titleToAdd" type="text"/>
+        <br>
+        <label for="descToAdd">Description de la news</label>
+        <textarea id="descToAdd" name="descriptionToAdd" cols="30" rows="5"></textarea>
+
+        <input type="submit" name="addNewsBtn" />
+    </form>
+</div>
+
+</body>
+
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script src="../dist/js/duplicatearticleerror.js"></script>
+<script src="../dist/js/requiredpropertyerror.js"></script>
+<script src="../dist/js/article.js"></script>
+
+<script src="../dist/js/http.js"></script>
+<script src="../dist/js/onglets.js"></script>
+<script src="../dist/js/const.js"></script>
+<script src="../dist/js/log.js"></script>
+<script src="../dist/js/math.js"></script>
+<script src="../dist/js/html.js"></script>
+<script src="../dist/js/main.js"></script>
+
+</html>
