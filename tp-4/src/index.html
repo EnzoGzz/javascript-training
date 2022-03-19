@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>News</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<script src="https://unpkg.com/vue@3"></script>
+<body id="app">
+
+    <h1>{{ title }}</h1>
+
+    <section id="news" v-if="getNbArticles">
+        <h2>News</h2>
+        <h3>{{ getNbArticles }} {{ getNbArticles > 1 ? 'articles' : 'article'}}</h3>
+
+        <hr>
+
+        <article-news v-for="(article, index) in articles" :title="article.title" :description="article.description" :index="index" @delete="deleteArticle(index)"></article-news>
+
+    </section>
+
+    <form id="addNewsForm" @submit="addArticle">
+
+        <div v-if="errors.length" :style="errorStyle">
+            <p>Error :</p>
+            <ul>
+                <li v-for="error in errors">{{ error}}</li>
+            </ul>
+        </div>
+
+        <p v-if="success" :style="successStyle">Success !</p>
+
+        <label for="titleToAdd">Nom de la news</label>
+        <input v-model="titleToAdd" id="titleToAdd" name="titleToAdd" type="text"/>
+        <br>
+        <label for="descToAdd">Description de la news</label>
+        <textarea v-model="descToAdd" id="descToAdd" name="descriptionToAdd" cols="30" rows="5"></textarea>
+
+        <input type="submit" name="addNewsBtn" />
+    </form>
+</body>
+
+<script src="js/const.js"></script>
+<script src="js/article.js"></script>
+<script src="js/errors/requiredpropertyerror.js"></script>
+<script src="js/errors/duplicatearticleerror.js"></script>
+<script type="module" src="js/ArticleNews.js"></script>
+<script type="module" src="js/main.js"></script>
+
+</html>
